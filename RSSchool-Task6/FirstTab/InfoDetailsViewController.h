@@ -1,5 +1,5 @@
 //
-//  ThirdTabViewController.h
+//  InfoDetailsViewController.h
 //  RSSchool-Task6
 //
 //  Created by Margo on 6/25/20.
@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class PHAsset;
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ThirdTabViewController : UIViewController
+@interface InfoDetailsViewController : UIViewController
+
+- (void)configureWith:(PHAsset *)asset;
 
 @end
 

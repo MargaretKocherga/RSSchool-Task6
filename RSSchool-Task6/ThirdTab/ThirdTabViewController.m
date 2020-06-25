@@ -1,3 +1,10 @@
+//
+//  ThirdTabViewController.m
+//  RSSchool-Task6
+//
+//  Created by Margo on 6/25/20.
+//  Copyright © 2020 Margo. All rights reserved.
+//
 
 #import "ThirdTabViewController.h"
 #import "CircleView.h"
@@ -5,6 +12,8 @@
 #import "TriangleView.h"
 #import "UIColor+Hex.h"
 #import "UIView+Animations.h"
+#import "AppDelegate.h"
+#import "ViewController.h"
 
 static NSString *const triangleColorHex = @"34C1A1";
 static NSString *const squareColorHex = @"29C2D1";
@@ -28,7 +37,7 @@ static NSString *const circleColorHex = @"EE686A";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"RSSchool Task 6";
+    self.navigationItem.title = @"RSSchool Task 6";
     self.iPhoneNameLabel.text = [[UIDevice currentDevice] name];
     self.iPhoneModelLabel.text = [[UIDevice currentDevice] model];
     self.iOSVersionLabel.text = [NSString stringWithFormat:@"iOS %@", [[UIDevice currentDevice] systemVersion]];
@@ -50,6 +59,20 @@ static NSString *const circleColorHex = @"EE686A";
     [self.circleView runPulseAnimation];
     [self.squareView runShakeAnimationWithDuration:0.5 repeat:YES];
     [self.triangleView runSpinAnimationWithDuration:1 repeat:YES];
+}
+
+- (IBAction)openGitHubCVButtonPressed:(id)sender {
+    NSURL *url = [NSURL URLWithString:@"https://margaretkocherga.github.io/rsschool-cv/cv"];
+    [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
+}
+
+- (IBAction)goToStartButtonPressed:(UIButton *)sender {
+    ViewController *viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    AppDelegate *appDelegate = (AppDelegate *)UIApplication.sharedApplication.delegate;
+    UIViewController *previousRootViewController = appDelegate.window.rootViewController;
+    appDelegate.window.rootViewController = viewController;
+    // Allow the view controller to be deallocated
+    [previousRootViewController dismissViewControllerAnimated:NO completion:nil];
 }
 
 @end

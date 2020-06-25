@@ -2,7 +2,7 @@
 //  GalleryViewController.h
 //  RSSchool-Task6
 //
-//  Created by Alexander Azarov on 6/25/20.
+//  Created by Margo on 6/25/20.
 //  Copyright © 2020 Margo. All rights reserved.
 //
 

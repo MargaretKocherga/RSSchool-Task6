@@ -1,5 +1,5 @@
 //
-//  ThirdTabViewController.h
+//  InfoViewController.h
 //  RSSchool-Task6
 //
 //  Created by Margo on 6/25/20.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ThirdTabViewController : UIViewController
+@interface InfoViewController : UIViewController
 
 @end
 

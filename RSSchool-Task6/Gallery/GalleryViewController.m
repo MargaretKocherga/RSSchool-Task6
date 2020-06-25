@@ -1,3 +1,10 @@
+//
+//  GalleryViewController.m
+//  RSSchool-Task6
+//
+//  Created by Margo on 6/25/20.
+//  Copyright © 2020 Margo. All rights reserved.
+//
 
 #import "GalleryViewController.h"
 #import <Photos/Photos.h>
@@ -17,8 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Gallery";
-
+    self.navigationItem.title = @"Gallery";
 
     [self.collectionView registerNib:[UINib nibWithNibName:@"GalleryImageCell" bundle:nil] forCellWithReuseIdentifier:@"galleryCell"];
     [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(viewWillAppear:) name:UIApplicationDidBecomeActiveNotification object:nil];

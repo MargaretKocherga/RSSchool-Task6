@@ -17,6 +17,7 @@
     rotationAnimation.duration = duration;
     rotationAnimation.cumulative = YES;
     rotationAnimation.repeatCount = repeat ? HUGE_VALF : 0;
+    rotationAnimation.removedOnCompletion = NO;
 
     [self.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
 }
@@ -29,6 +30,7 @@
     animation.autoreverses = YES;
     animation.fromValue = @(25);
     animation.toValue = @(45);
+    animation.removedOnCompletion = NO;
 
     [self.layer addAnimation:animation forKey:@"position"];
 }
@@ -40,6 +42,7 @@
     animation.autoreverses = YES;
     animation.fromValue = @(0.9);
     animation.toValue = @(1.1);
+    animation.removedOnCompletion = NO;
 
     [self.layer addAnimation:animation forKey:@"pulse"];
 }
